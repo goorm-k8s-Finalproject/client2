@@ -1,0 +1,6 @@
+.SearchResultsTable {
+    margin: 2rem auto;
+    width: 80vw;
+    border: .5px solid #356DE6;
+    border-collapse: collapse;
+}

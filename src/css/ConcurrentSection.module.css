@@ -1,0 +1,30 @@
+.ConcurrentSectionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .ConcurrentSectionTopBar {
+    display: flex;
+    justify-content: space-between;
+    width: 70vw;
+  
+  }
+  
+  .ConcurrentSectionTitle {
+    color: #356de6;
+  }
+  
+  .ConcurrentSectionButton {
+    background-color: white;
+    border: 1px solid #356de6;
+    border-radius: 5px;
+    color: #356de6;
+  }
+  
+  .ConcurrentSectionButton:hover {
+    background-color: #356de6;
+    color: white;
+  }
+  

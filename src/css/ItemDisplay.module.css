@@ -1,0 +1,82 @@
+
+/* Upper bar (Item Logo + title + buttons) */
+.itemDisplayLogoBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .itemDisplayLogoBarTitle {
+    margin: 0 2rem;
+    display: flex;
+  }
+  
+  .itemDisplayLogoBarTitle > * {
+    margin: 0 1rem;
+  }
+  
+  .itemDisplayLogoBarButtons {
+    margin: 0 2rem;
+  }
+  
+  .itemDisplayLogoBarButtons > button {
+    margin: 0 1rem;
+  }
+  
+  /* This class contains the table and the right side */
+  .itemDisplayFlex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+    }
+    
+    .itemDisplayFlex > * {
+      margin: 1rem auto;
+    }
+  
+  /* Left Section (just the table) */
+  
+  .itemDisplayTable {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  
+  .itemDisplayTable tr {
+    border: 1px solid black;
+  }
+  
+  .itemDisplayTable td {
+    padding: 1rem 2rem;
+  }
+  
+  /* Right Section (Thumbnail + Rating + Current Players + Description) */
+  
+  .itemDisplayRightSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .itemDisplayRightSection > * {
+    margin: 1rem;
+    width: 50vw;
+  }
+  
+  .itemDisplayThumbnail {
+    min-width: 460px;
+    width: 460px;
+    height: 215px;
+  }
+  
+  .itemDisplayRightSection div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .itemDisplayRightSection div > * {
+    margin: 0 2rem;
+  }
+  

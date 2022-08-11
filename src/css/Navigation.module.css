@@ -1,0 +1,79 @@
+.navigationBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .navigationBarLogo {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .logoSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logoSection * {
+    margin: 0 1rem;
+  }
+  
+  .navigationBarTitle {
+    overflow-wrap: normal;
+    color: #356de6;
+    cursor: pointer;
+  }
+  
+  .navigationBarTitle sub{
+    color: #356de6;
+    font-size: x-small;
+    margin-left: -10%;
+  }
+  
+  .navigationBarTitle span {
+    color: red;
+    font-size: 12px;
+    position: relative;
+    right: 1rem;
+    bottom: 1rem;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #356de6;
+  }
+  
+  .button {
+    padding: 0 1rem;
+    margin: 0 0.5rem;
+    width: 100px;
+  }
+  
+  .loginButton {
+    background-color: white;
+    border: 1px solid #356de6;
+    border-radius: 5px;
+    color: #356de6;
+  }
+  
+  .loginButton:hover {
+    background-color: #356de6;
+    color: white;
+  }
+  
+  .registerButton {
+    background-color: #356de6;
+    border: 1px solid #356de6;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  .registerButton:hover {
+    background-color: white;
+    color: #356de6;
+  }
+  

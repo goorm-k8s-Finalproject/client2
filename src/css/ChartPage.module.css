@@ -1,0 +1,15 @@
+.ChartPageContainer {
+    height: 78vh;
+}
+
+.ChartPageTitleContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 14vw;
+}
+
+
+.ChartPageTitle, .ChartPageOnline {
+    color: #356DE6
+}

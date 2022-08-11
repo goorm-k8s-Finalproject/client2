@@ -1,0 +1,19 @@
+.ItemPricesContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.ItemPricesContainerTitle {
+    align-self: flex-start;
+    margin: 0 2rem;
+}
+
+/* CSS for the table component. REMOVE from here if the styling is already applied to the component itself */
+.ItemPricesContainer table{
+    border: 2px solid black;
+    width: 50vw;
+    text-align: center;
+}

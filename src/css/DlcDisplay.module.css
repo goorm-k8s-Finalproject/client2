@@ -1,0 +1,22 @@
+.DlcTableContainer {
+    margin: 2rem auto;
+}
+
+.DlcTableTitle {
+    margin: 1rem 2rem;
+}
+
+.DlcTable{
+    margin: 0 auto;
+    border: 1px solid black;
+    border-spacing: 0;
+}
+
+.DlcTable td{
+    padding: 1rem;
+}
+
+.DlcTable tbody tr:hover {
+    background-color: rgb(225, 219, 219);
+    cursor: pointer;
+}
