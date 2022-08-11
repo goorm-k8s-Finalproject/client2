@@ -8,4 +8,7 @@
 .gridContainer > * {
     border: 1px solid;
     margin: auto;
+    border-color: #356de6;
+    border-radius: 5px;
+    padding: 3%;
 }

@@ -18,7 +18,7 @@ const Navigation = () => {
                 ></img>
                 <h1 className={styles.navigationBarTitle} onClick={() => navigate('/')}>
                     P2P Games<span>beta</span>
-                    <h6><sub>Prepare to Win</sub></h6>
+                    <h6><sub>Prepare to Play !</sub></h6>
                 </h1>
                 <SearchBar />
                 <div>
@@ -30,7 +30,7 @@ const Navigation = () => {
 
             <div>
                 <button className={`${styles.button} ${styles.loginButton}`}
-                onClick={() => navigate('/Login')}
+                onClick={() => navigate("../pages/LoginPage")}
                 >
                     Login
                 </button>

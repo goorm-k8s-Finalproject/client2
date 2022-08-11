@@ -10,7 +10,7 @@ const Landing = () => {
     return (
         <section className={styles.imageContainer}>
             <img className={styles.landingImage} src={require('../assets/img/landingcover.png')} />
-            <img className={styles.logoimage} src={require('../assets/img/kube-logo.png')} />
+                <img className={styles.logoimage} src={require('../assets/img/kube-logo.png')} />
             <button className={styles.joinButton} onClick={() => navigate("/register")}>Join Now !</button>
         </section>
     );

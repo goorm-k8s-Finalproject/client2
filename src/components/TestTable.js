@@ -1,7 +1,7 @@
 const TestTable = () => {
     return (
       <section>
-        <table>
+        <table styles={{colors: '#356de6'}}>
           <thead>
             <tr>
               <th>Name</th>
