@@ -13,7 +13,8 @@
 
 /* CSS for the table component. REMOVE from here if the styling is already applied to the component itself */
 .ItemPricesContainer table{
-    border: 2px solid black;
+    border: 2px solid #356de6;
     width: 50vw;
     text-align: center;
+    border-radius: 5px;
 }

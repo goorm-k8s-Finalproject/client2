@@ -21,9 +21,11 @@ const Navigation = () => {
                     <h6><sub>Prepare to Win</sub></h6>
                 </h1>
                 <SearchBar />
-                <Link to='/'>Home</Link>
-                <Link to='chart'>Chart</Link>
-                <Link to='list'>List</Link>
+                <div>
+                    <Link to='/'>Home</Link>
+                    <Link to='chart'>Chart</Link>
+                    <Link to='list'>List</Link>
+                </div>
             </div>
 
             <div>

@@ -3,7 +3,7 @@
 }
 
 .SearchBarInput {
- border: 1px solid #356DE6;
+ border: 2px solid #356DE6;
  border-radius: 10px;
 }
 
@@ -12,8 +12,8 @@
 }
 
 .SearchBarSearchIcon {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     position: relative;
     right: 60px;
     align-self: center;

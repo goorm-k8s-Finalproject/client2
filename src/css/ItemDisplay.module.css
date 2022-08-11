@@ -38,12 +38,14 @@
   /* Left Section (just the table) */
   
   .itemDisplayTable {
-    border: 1px solid black;
+    border: 1px solid #356de6;
     border-collapse: collapse;
+    border-radius: 5px;
   }
   
   .itemDisplayTable tr {
-    border: 1px solid black;
+    border: 1px solid #356de6;
+    border-radius: 5px;
   }
   
   .itemDisplayTable td {
@@ -65,9 +67,9 @@
   }
   
   .itemDisplayThumbnail {
-    min-width: 460px;
-    width: 460px;
-    height: 215px;
+    min-width: 500px;
+    width: 500px;
+    height: 250px;
   }
   
   .itemDisplayRightSection div {
