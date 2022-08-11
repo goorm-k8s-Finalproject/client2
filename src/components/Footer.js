@@ -17,12 +17,12 @@ const Footer = () => {
         <h2 className={styles.footerTitle} onClick={() => navigate("/")}>Price Comparator</h2>
       </div>
       <div className={styles.footerLinks}>
-        <Link to="/resources">Resources</Link>
+        <Link to="/resources">Test</Link>
         <Link to="/support">Support</Link>
         <Link to="/developers">Developers</Link>
       </div>
       <div>
-        <p>© Bokdoli</p>
+        <p>©Team Bokdoli</p>
       </div>
     </footer>
   );
