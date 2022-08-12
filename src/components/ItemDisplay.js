@@ -20,8 +20,7 @@ const ItemDisplay = () => {
       publisher: results[570].data.publishers[0],
       releaseDate: results[570].data.release_date.date,
       path_thumbnail: results[570].data.path_thumbnail,
-      ratings: results[570].data.metacritic.score,
-      required_age: results[570].data.required_age
+      ratings: results[570].data.metacritic.score
     };
 
     setGameData(refinedData);
@@ -65,10 +64,6 @@ const ItemDisplay = () => {
           <tr>
             <td>Metacritic Ratings</td>
             <td>{gameData.ratings}</td>
-          </tr>
-          <tr>
-            <td>Required_age</td>
-            <td>{gameData.required_age}</td>
           </tr>
         </table>
         <div className={styles.itemDisplayRightSection}>

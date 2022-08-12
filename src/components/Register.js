@@ -45,4 +45,4 @@ function Register() {
     </div>
   );
 }
-export default RegisterPage;
+export default Register;
