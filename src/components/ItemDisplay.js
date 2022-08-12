@@ -19,7 +19,6 @@ const ItemDisplay = () => {
       developer: results[570].data.developers[0],
       publisher: results[570].data.publishers[0],
       releaseDate: results[570].data.release_date.date,
-      path_thumbnail: results[570].data.path_thumbnail,
       ratings: results[570].data.metacritic.score
     };
 
@@ -30,8 +29,7 @@ const ItemDisplay = () => {
   return (
     <section className={styles.itemDisplaySection}>
       <div className={styles.itemDisplayLogoBar}>
-        <div className={styles.itemDisplayLogoBarTitle}>
-          <h1>{gameData.path_thumbnail}</h1>
+        <div className={styles.itemDisplayLogoBarTitle}>=
           <h1>{gameData.name}</h1>
         </div>
         <div className={styles.itemDisplayLogoBarButtons}>
