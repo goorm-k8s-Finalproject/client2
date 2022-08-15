@@ -3,34 +3,35 @@ import {
   useState 
 } from "react";
 
+import axios from "axios";
 import styles from "../css/ItemDisplay.module.css";
 
 const ItemDisplay = () => {
-  const [gameData, setGameData] = useState({});
+  const [appData, setAppData] = useState({});
+  const [appdevData, setAppdevData] = useState({});
 
-  useEffect(() => {
-    const results = require("../assets/testdetail.json");
-    const refinedData = {
-      name: results[570].data.name,
-      type: results[570].data.type,
-      appid: results[570].data.steam_appid,
-      description: results[570].data.detailed_description,
-      thumbnail: results[570].data.header_image,
-      developer: results[570].data.developers[0],
-      publisher: results[570].data.publishers[0],
-      releaseDate: results[570].data.release_date.date,
-      ratings: results[570].data.metacritic.score
-    };
+    const getEventsapp = async () => {
+      const url = 'http://ec2-15-164-203-139.ap-northeast-2.compute.amazonaws.com:8000/p2p/app/1174180/'
+      const res = await axios.get(url)
+      console.log(res)
+      setAppData(res.data)
+    } //app 데이터 통신
 
-    setGameData(refinedData);
+    // const getEventsappdev = async () => {
+    //   const url = 'http://ec2-15-164-203-139.ap-northeast-2.compute.amazonaws.com:8000/p2p/appdev/?app=1174180'
+    //   const res1 = await axios.get(url)
+    //   console.log(res1)
+    //   setAppdevData(res1.data)
+    // } //appdev 데이터 통신
   
-  }, []);
+  getEventsapp();
+  // getEventsappdev();
 
   return (
     <section className={styles.itemDisplaySection}>
       <div className={styles.itemDisplayLogoBar}>
         <div className={styles.itemDisplayLogoBarTitle}>=
-          <h1>{gameData.name}</h1>
+          <h1>{appData.name}</h1>
         </div>
         <div className={styles.itemDisplayLogoBarButtons}>
           <button>Store</button>
@@ -41,40 +42,32 @@ const ItemDisplay = () => {
         <table className={styles.itemDisplayTable}>
           <tr>
             <td>APP ID</td>
-            <td>{gameData.appid}</td>
+            <td>{appData.app_id}</td>
           </tr>
           <tr>
             <td>APP Type</td>
-            <td>{gameData.type}</td>
+            <td>{appData.type}</td>
           </tr>
-          <tr>
+          {/* <tr>
             <td>Developer</td>
-            <td>{gameData.developer}</td>
-          </tr>
-          <tr>
+            <td>{appdevData.developer.name}</td>
+          </tr> */}
+          {/* <tr>
             <td>Publisher</td>
             <td>{gameData.publisher}</td>
-          </tr>
+          </tr> */}
           <tr>
             <td>Release Date</td>
-            <td>{gameData.releaseDate}</td>
-          </tr>
-          <tr>
-            <td>Metacritic Ratings</td>
-            <td>{gameData.ratings}</td>
+            <td>{appData.release_Date}</td>
           </tr>
         </table>
         <div className={styles.itemDisplayRightSection}>
           <img
             className={styles.itemDisplayThumbnail}
-            src={gameData.thumbnail}
+            src={appData.header_url}
           />
-          <p dangerouslySetInnerHTML={{__html: gameData.description}}></p>
+          <p dangerouslySetInnerHTML={{__html: appData.description}}></p>
         </div>
-      </div>
-
-      <div>
-        
       </div>
     </section>
   );
