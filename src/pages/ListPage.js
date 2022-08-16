@@ -1,5 +1,4 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import FilterSearch from "../components/FilterSearch";
 import SearchResults from "../components/SearchResults";
 
@@ -7,7 +6,7 @@ const ListPage = () => {
 
   const dummyData = [
     {
-      thumbnail: '../assets/img/listdummy1.png',
+      thumbnail: "../assets/img/listdummy1.png",
       platform: "Steam",
       name: "Red Dead Redemption 2",
       tags: ["FPS", "RPG"],

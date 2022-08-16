@@ -1,7 +1,6 @@
 import {
     Link,
-    useNavigate,
-    Route
+    useNavigate
 } from "react-router-dom";
 
 import SearchBar from "./SearchBar";

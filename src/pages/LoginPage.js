@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import styles from "../css/LoginRegister.module.css"
 
 const Container = styled.div`
   margin-top: 100px;
@@ -41,6 +40,7 @@ const Button = styled.div`
 `;
 //아디 비번 값 받기
 //값없으면 disabled
+
 function LoginPage() {
   return (
       <Container>

@@ -3,12 +3,7 @@ import styles from "../css/SearchItem.module.css";
 const SearchItem = (props) => {
   return (
     <tr className={styles.SearchItemContainer}>
-      <td className={styles.SearchItemThumbnail}>
-        <img src={props.thumbnail} alt="Thumbnail" />
-      </td>
-      <td className={styles.SearchItemPlatform}>
-        <h3>{props.platform}</h3>
-      </td>
+      
       <td className={styles.SearchItemNameSection}>
         <div className={styles.SearchItemName}>
           <h3>{props.name}</h3>
@@ -18,6 +13,9 @@ const SearchItem = (props) => {
             <h4 key={index}>{tag}</h4>
           ))}
         </div>
+      </td>
+      <td className={styles.SearchItemPlatform}>
+        <h3>{props.platform}</h3>
       </td>
       <td className={styles.SearchItemPriceSection}>
         <div>
