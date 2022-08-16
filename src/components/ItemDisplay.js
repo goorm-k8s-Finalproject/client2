@@ -18,22 +18,22 @@ const ItemDisplay = () => {
     axios
       .all([
         axios.get(
-          process.env.REACT_APP_BACK_URL + '/app/1089090/'
+          process.env.REACT_APP_BACK_BASE_URL + '/app/1089090/'
         ),
         axios.get(
-          process.env.REACT_APP_BACK_URL + '/appdev/?app=1089090'
+          process.env.REACT_APP_BACK_BASE_URL + '/appdev/?app=1089090'
         ),
         axios.get(
-          process.env.REACT_APP_BACK_URL + '/apppub/?app=1089090'
+          process.env.REACT_APP_BACK_BASE_URL + '/apppub/?app=1089090'
         ),
         axios.get(
-          process.env.REACT_APP_BACK_URL + '/appgenre/?app=1089090'
+          process.env.REACT_APP_BACK_BASE_URL + '/appgenre/?app=1089090'
         ),
         axios.get(
-          process.env.REACT_APP_BACK_URL + '/description/?app=1089090'
+          process.env.REACT_APP_BACK_BASE_URL + '/description/?app=1089090'
         ),
         axios.get(
-          process.env.REACT_APP_BACK_URL + '/recommendation/?app=1089090'
+          process.env.REACT_APP_BACK_BASE_URL + '/recommendation/?app=1089090'
         )
       ])
 

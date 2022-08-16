@@ -1,6 +1,7 @@
 import {
     Link,
-    useNavigate
+    useNavigate,
+    Route
 } from "react-router-dom";
 
 import SearchBar from "./SearchBar";
@@ -30,13 +31,13 @@ const Navigation = () => {
 
             <div>
                 <button className={`${styles.button} ${styles.loginButton}`}
-                onClick={() => navigate('./Login')}
+                onClick={() => navigate('/login')}
                 >
                     Login
                 </button>
 
                 <button className={`${styles.button} ${styles.registerButton}`}
-                onClick={() => navigate('/Register')}
+                onClick={() => navigate('/register')}
                 >
                     Register
                 </button>

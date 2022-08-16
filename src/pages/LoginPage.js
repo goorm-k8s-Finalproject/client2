@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import styles from "../css/LoginRegister.module.css"
 
 const Container = styled.div`
   margin-top: 100px;
@@ -11,7 +12,7 @@ const Input = styled.input`
   overflow: hidden;
   width: 100%;
   height: 40px;
-  margin: 0 0 8px;
+  margin: 0 0 24px;
   padding: 5px 39px 5px 11px;
   border: solid 1px #dadada;
   background: #fff;
@@ -31,28 +32,28 @@ const Button = styled.div`
   color: #fff;
   border: none;
   border-radius: 0;
-  background-color: #03c75a;
+  background-color: #356DE6;
   ${({ disabled }) =>
     disabled &&
     `
     background-color: #efefef;
   `}
 `;
-
 //아디 비번 값 받기
 //값없으면 disabled
-function Login() {
+function LoginPage() {
   return (
-    <Container>
-      <Input id="id" name="id" placeholder="아이디를 입력해주세요" />
-      <Input
-        id="password"
-        name="password"
-        type="password"
-        placeholder="비밀번호를 입력해주세요"
-      />
-      <Button>로그인</Button>
-    </Container>
+      <Container>
+        <Input id="id" name="id" placeholder="Email" />
+        <Input
+          id="password"
+          name="password"
+          type="password"
+          placeholder="Password"
+        />
+        <Button>Login</Button>
+      </Container>
   );
 }
-export default Login;
+
+export default LoginPage;
