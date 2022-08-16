@@ -15,26 +15,25 @@ const ItemDisplay = () => {
   const [recoData, setRecoData] = useState('');
 
   useEffect(() => {
-    const url = 'http://k8s-default-p2palbco-0fda6a8da8-562552387.ap-northeast-2.elb.amazonaws.com/p2p'
     axios
       .all([
         axios.get(
-          url + '/app/1089090/'
+          process.env.REACT_APP_BACK_BASE_URL + '/app/1089090/'
         ),
         axios.get(
-          url + '/appdev/?app=1089090'
+          process.env.REACT_APP_BACK_BASE_URL + '/appdev/?app=1089090'
         ),
         axios.get(
-          url + '/apppub/?app=1089090'
+          process.env.REACT_APP_BACK_BASE_URL + '/apppub/?app=1089090'
         ),
         axios.get(
-          url + '/appgenre/?app=1089090'
+          process.env.REACT_APP_BACK_BASE_URL + '/appgenre/?app=1089090'
         ),
         axios.get(
-          url + '/description/?app=1089090'
+          process.env.REACT_APP_BACK_BASE_URL + '/description/?app=1089090'
         ),
         axios.get(
-          url + '/recommendation/?app=1089090'
+          process.env.REACT_APP_BACK_BASE_URL + '/recommendation/?app=1089090'
         )
       ])
 
@@ -58,6 +57,8 @@ const ItemDisplay = () => {
           setDescrpData(data5.results[0].short_description);
           if (!data6.results || data6.results.length == 0) return;
           setRecoData(data6.results[0].count);
+
+          console.log(setAppData);
         })
       )
       .catch(() => {});

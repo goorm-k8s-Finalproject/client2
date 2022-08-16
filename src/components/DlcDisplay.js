@@ -14,8 +14,8 @@ const DlcDisplay = () => {
   const [dlcData, setDlcData] = useState('');
 
   useEffect(() => {
-    const url = 'http://k8s-default-p2palbco-0fda6a8da8-562552387.ap-northeast-2.elb.amazonaws.com/p2p/dlc/?basegame=1089090'
-    axios.get(url)
+
+    axios.get(process.env.REACT_APP_BACK_BASE_URL + '/dlc/?basegame=1089090')
 
     .then(
       axios.spread((res1) => {

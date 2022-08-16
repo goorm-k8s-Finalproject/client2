@@ -8,13 +8,12 @@ const ItemPrices = () => {
     const [priceData, setPriceData] = useState({});
 
     useEffect(() => {
-        const url = 'http://k8s-default-p2palbco-0fda6a8da8-562552387.ap-northeast-2.elb.amazonaws.com/p2p'
         axios.all([
             axios.get(
-                url + '/app/1089090/'
+                process.env.REACT_APP_BACK_BASE_URL + '/app/1089090/'
             ),
             axios.get(
-                url + '/price/?app=1089090'
+                process.env.REACT_APP_BACK_BASE_URL + '/price/?app=1089090'
             )
         ])
         .then(
