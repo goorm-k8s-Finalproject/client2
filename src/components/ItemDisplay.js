@@ -9,31 +9,32 @@ import styles from "../css/ItemDisplay.module.css";
 const ItemDisplay = () => {
   const [appData, setAppData] = useState({});
   const [appdevData, setAppdevData] = useState('');
-  const [apppubData, setApppubData] = useState({});
-  const [appgenData, setAppgenData] = useState({});
-  const [descrpData, setDescrpData] = useState({});
-  const [recoData, setRecoData] = useState({});
+  const [apppubData, setApppubData] = useState('');
+  const [appgenData, setAppgenData] = useState('');
+  const [descrpData, setDescrpData] = useState('');
+  const [recoData, setRecoData] = useState('');
 
   useEffect(() => {
+    const url = 'http://k8s-default-p2palbco-0fda6a8da8-562552387.ap-northeast-2.elb.amazonaws.com/p2p'
     axios
       .all([
         axios.get(
-          'http://k8s-default-p2palbco-0fda6a8da8-562552387.ap-northeast-2.elb.amazonaws.com/p2p/app/1089090/'
+          url + '/app/1089090/'
         ),
         axios.get(
-          'http://k8s-default-p2palbco-0fda6a8da8-562552387.ap-northeast-2.elb.amazonaws.com/p2p/appdev/?app=1089090'
+          url + '/appdev/?app=1089090'
         ),
         axios.get(
-          'http://k8s-default-p2palbco-0fda6a8da8-562552387.ap-northeast-2.elb.amazonaws.com/p2p/apppub/?app=1089090'
+          url + '/apppub/?app=1089090'
         ),
         axios.get(
-          'http://k8s-default-p2palbco-0fda6a8da8-562552387.ap-northeast-2.elb.amazonaws.com/p2p/appgenre/?app=1089090'
+          url + '/appgenre/?app=1089090'
         ),
         axios.get(
-          'http://k8s-default-p2palbco-0fda6a8da8-562552387.ap-northeast-2.elb.amazonaws.com/p2p/description/?app=1089090'
+          url + '/description/?app=1089090'
         ),
         axios.get(
-          'http://k8s-default-p2palbco-0fda6a8da8-562552387.ap-northeast-2.elb.amazonaws.com/p2p/recommendation/?app=1089090'
+          url + '/recommendation/?app=1089090'
         )
       ])
 
@@ -47,18 +48,16 @@ const ItemDisplay = () => {
           const data6 = res6.data;
 
           setAppData(data1);
-          setAppdevData(data2);
-          setApppubData(data3);
-          setAppgenData(data4);
-          setDescrpData(data5);
-          setRecoData(data6);
-
-          console.log(data1);
-          console.log(data2);
-          console.log(data3);
-          console.log(data4);
-          console.log(data5);
-          console.log(data6);
+          if (!data2.results || data2.results.length == 0) return;
+          setAppdevData(data2.results[0].developer.name);
+          if (!data3.results || data3.results.length == 0) return;
+          setApppubData(data3.results[0].publisher.name);
+          if (!data4.results || data4.results.length == 0) return;
+          setAppgenData(data4.results[0].genre.genre);
+          if (!data5.results || data5.results.length == 0) return;
+          setDescrpData(data5.results[0].short_description);
+          if (!data6.results || data6.results.length == 0) return;
+          setRecoData(data6.results[0].count);
         })
       )
       .catch(() => {});
@@ -87,15 +86,15 @@ const ItemDisplay = () => {
           </tr>
           <tr>
             <td>Genre</td>
-            {/* <td>{appgenData.results[0].genre}</td> */}
+            <td>{appgenData}</td>
           </tr>
           <tr>
             <td>Developer</td>
-            {/* <td>{appdevData.results[0].developer.name}</td> */}
+            <td>{appdevData}</td>
           </tr>
           <tr>
             <td>Publisher</td>
-            {/* <td>{apppubData}</td> */}
+            <td>{apppubData}</td>
           </tr>
           <tr>
             <td>Release Date</td>
@@ -103,7 +102,7 @@ const ItemDisplay = () => {
           </tr>
           <tr>
             <td>Recommendations</td>
-            {/* <td>{recoData.results[0].count}</td> */}
+            <td>{recoData}</td>
           </tr>
         </table>
         <div className={styles.itemDisplayRightSection}>
@@ -111,7 +110,7 @@ const ItemDisplay = () => {
             className={styles.itemDisplayThumbnail}
             src={appData.header_url}
           />
-          {/* <p dangerouslySetInnerHTML={{__html: descrpData.results[0].short_descrption}}></p> */}
+          <p>{descrpData}</p>
         </div>
       </div>
     </section>

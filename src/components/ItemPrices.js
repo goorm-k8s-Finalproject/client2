@@ -4,29 +4,31 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const ItemPrices = () => {
-    // const [appData, setAppdata] = useState({});
-    // const [priceData, setPriceData] = useState({});
+    const [appData, setAppdata] = useState({});
+    const [priceData, setPriceData] = useState({});
 
-    // useEffect(() => {
-    //     axios.all([
-    //         axios.get(
-    //             'http://k8s-default-p2palbco-0fda6a8da8-562552387.ap-northeast-2.elb.amazonaws.com/p2p/app/802870/'
-    //         ),
-    //         axios.get(
-    //             'http://k8s-default-p2palbco-0fda6a8da8-562552387.ap-northeast-2.elb.amazonaws.com/p2p/price/?app=802870'
-    //         )
-    //     ])
-    //     .then(
-    //         axios.spread((res1, res2) => {
-    //             const data1 = res1.data;
-    //             const data2 = res2.data;
+    useEffect(() => {
+        const url = 'http://k8s-default-p2palbco-0fda6a8da8-562552387.ap-northeast-2.elb.amazonaws.com/p2p'
+        axios.all([
+            axios.get(
+                url + '/app/1089090/'
+            ),
+            axios.get(
+                url + '/price/?app=1089090'
+            )
+        ])
+        .then(
+            axios.spread((res1, res2) => {
+                const data1 = res1.data;
+                const data2 = res2.data;
 
-    //             setAppdata(data1);
-    //             setPriceData(data2);
-    //         })
-    //     )
-    //     .catch(() => {});
-    // }, [])
+                setAppdata(data1);
+                if (!data2.results || data2.results.length == 0) return;
+                setPriceData(data2.results[0]);
+            })
+        )
+        .catch(() => {});
+    }, [])
 
     return(
         <section className={styles.ItemPricesContainer}>
@@ -42,17 +44,11 @@ const ItemPrices = () => {
                 </thead>
                 <tbody>
                     <tr>
-                    <td>원피스 해적무쌍 4</td>
-                    <td>64,800₩</td>
-                    <td>30%</td>
-                    <td>45,360₩</td>
-                    </tr>
-                    {/* <tr>
                     <td>{appData.name}</td>
-                    <td>{priceData.results.init_price}</td>
-                    <td>{priceData.results.discount}%</td>
-                    <td>{priceData.results.price}</td>
-                    </tr> */}
+                    <td>{priceData.init_price} ₩</td>
+                    <td>{priceData.discount} %</td>
+                    <td>{priceData.price} ₩</td>
+                    </tr>
                 </tbody>
             </table>
         </section>
