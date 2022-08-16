@@ -1,13 +1,15 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import FilterSearch from "../components/FilterSearch";
 import SearchResults from "../components/SearchResults";
 
 const ListPage = () => {
+
   const dummyData = [
     {
-      thumbnail: "../assets/img/Kubernetes_logo.png",
+      thumbnail: "../assets/img/listdummy1.png",
       platform: "Steam",
-      name: "Test Game 1",
+      name: "Red Dead Redemption 2",
       tags: ["FPS", "RPG"],
       originalPrice: 30000,
       discountPrice: 15000,
@@ -15,26 +17,27 @@ const ListPage = () => {
       link: "http://steamcommunity.com",
     },
     {
-      thumbnail: "../assets/img/Kubernetes_logo.png",
+      thumbnail: "../assets/img/listdummy2.png",
       platform: "EPIC Store",
-      name: "Test Game 2",
-      tags: ["RTS", "RPG"],
+      name: "Crysis Remastered",
+      tags: ["FPS"],
       originalPrice: 60000,
       discountPrice: 15000,
       cut: 75,
       link: "http://steamcommunity.com",
     },
     {
-      thumbnail: "../assets/img/Kubernetes_logo.png",
+      thumbnail: "../assets/img/listdummy3.png",
       platform: "GOG",
-      name: "Test Game 3",
-      tags: ["Horror", "FPS"],
+      name: "Grand Theft Auto IV: The Complete Edition",
+      tags: ["Single", "Action"],
       originalPrice: 10000,
       discountPrice: 9000,
       cut: 10,
       link: "http://steamcommunity.com",
     },
   ];
+  
   const [searchData, setSearchData] = useState(dummyData);
 
   const searchHandler = (filters) => {

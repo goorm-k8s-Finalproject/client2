@@ -11,7 +11,7 @@ const ConcurrentSection = () => {
     return(
         <section className={styles.ConcurrentSectionContainer}>
             <div className={styles.ConcurrentSectionTopBar}>
-                <h2 className={styles.ConcurrentSectionTitle}>Concurrent Steam Users</h2>
+                <h2 className={styles.ConcurrentSectionTitle}>Currency Exchange Rate</h2>
                 <button className={styles.ConcurrentSectionButton} onClick={() => navigate("/chart")}>더보기</button>
             </div>
             <Chart></Chart>

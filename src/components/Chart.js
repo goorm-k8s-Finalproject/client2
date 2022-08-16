@@ -10,7 +10,7 @@ const Chart = () => {
       zoomType: "x",
     },
     title: {
-      text: "TEST CHART",
+      text: "USD to EUR",
     },
     subtitle: {
       text:

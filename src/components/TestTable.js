@@ -12,28 +12,28 @@ const TestTable = () => {
           </thead>
           <tbody>
             <tr>
-              <td>Dummy Game 1</td>
-              <td>40,000₩</td>
-              <td>30%</td>
-              <td>10,000₩</td>
+              <td>Cyberpunk 2077</td>
+              <td>66,000₩</td>
+              <td>50%</td>
+              <td>33,000₩</td>
             </tr>
             <tr>
-              <td>Dummy Game 2</td>
-              <td>60,000₩</td>
+              <td>Battlefield 2042</td>
+              <td>66,000₩</td>
+              <td>33%</td>
+              <td>44,220₩</td>
+            </tr>
+            <tr>
+              <td>ACE COMBAT™ 7: SKIES UNKNOWN</td>
+              <td>54,800₩</td>
               <td>10%</td>
-              <td>60,000₩</td>
+              <td>49,320₩</td>
             </tr>
             <tr>
-              <td>Dummy Game 3</td>
-              <td>30,000₩</td>
-              <td>10%</td>
-              <td>30,000₩</td>
-            </tr>
-            <tr>
-              <td>Dummy Game 4</td>
-              <td>20,000₩</td>
-              <td>60%</td>
-              <td>10,000₩</td>
+              <td>TEKKEN 7</td>
+              <td>89,800₩</td>
+              <td>85%</td>
+              <td>13,470₩</td>
             </tr>
           </tbody>
         </table>
