@@ -30,13 +30,13 @@ const Navigation = () => {
 
             <div>
                 <button className={`${styles.button} ${styles.loginButton}`}
-                onClick={() => navigate('./AuthWrapper')}
+                onClick={() => navigate('/Login')}
                 >
                     Login
                 </button>
 
                 <button className={`${styles.button} ${styles.registerButton}`}
-                onClick={() => navigate('./Register')}
+                onClick={() => navigate('/Register')}
                 >
                     Register
                 </button>

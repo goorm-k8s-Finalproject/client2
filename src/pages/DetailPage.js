@@ -8,8 +8,8 @@ const DetailPage = () => {
         <section>
             <ItemDisplay />
             <ItemPrice />
-            <PriceHistory />
             <DlcDisplay />
+            <PriceHistory />
         </section>
     );
 };
