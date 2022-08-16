@@ -22,7 +22,7 @@ const ItemPrices = () => {
                 const data2 = res2.data;
 
                 setAppdata(data1);
-                if (!data2.results || data2.results.length == 0) return;
+                if (!data2.results || data2.results.length === 0) return;
                 setPriceData(data2.results[0]);
             })
         )
