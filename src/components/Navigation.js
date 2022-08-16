@@ -30,7 +30,7 @@ const Navigation = () => {
 
             <div>
                 <button className={`${styles.button} ${styles.loginButton}`}
-                onClick={() => navigate('/Login')}
+                onClick={() => navigate('./Login')}
                 >
                     Login
                 </button>
