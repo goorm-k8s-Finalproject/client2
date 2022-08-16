@@ -42,10 +42,10 @@ const ItemPrices = () => {
                 </thead>
                 <tbody>
                     <tr>
-                    <td>The Ditzy Demons Are in Love With Me</td>
-                    <td>26,000₩</td>
-                    <td>40%</td>
-                    <td>15,600₩</td>
+                    <td>원피스 해적무쌍 4</td>
+                    <td>64,800₩</td>
+                    <td>30%</td>
+                    <td>45,360₩</td>
                     </tr>
                     {/* <tr>
                     <td>{appData.name}</td>

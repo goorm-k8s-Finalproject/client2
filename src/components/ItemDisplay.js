@@ -8,7 +8,7 @@ import styles from "../css/ItemDisplay.module.css";
 
 const ItemDisplay = () => {
   const [appData, setAppData] = useState({});
-  const [appdevData, setAppdevData] = useState({});
+  const [appdevData, setAppdevData] = useState('');
   const [apppubData, setApppubData] = useState({});
   const [appgenData, setAppgenData] = useState({});
   const [descrpData, setDescrpData] = useState({});
@@ -18,24 +18,25 @@ const ItemDisplay = () => {
     axios
       .all([
         axios.get(
-          'http://k8s-default-p2palbco-0fda6a8da8-562552387.ap-northeast-2.elb.amazonaws.com/p2p/app/802870/'
+          'http://k8s-default-p2palbco-0fda6a8da8-562552387.ap-northeast-2.elb.amazonaws.com/p2p/app/1089090/'
         ),
         axios.get(
-          'http://k8s-default-p2palbco-0fda6a8da8-562552387.ap-northeast-2.elb.amazonaws.com/p2p/appdev/?app=802870'
+          'http://k8s-default-p2palbco-0fda6a8da8-562552387.ap-northeast-2.elb.amazonaws.com/p2p/appdev/?app=1089090'
         ),
         axios.get(
-          'http://k8s-default-p2palbco-0fda6a8da8-562552387.ap-northeast-2.elb.amazonaws.com/p2p/apppub/?app=802870'
+          'http://k8s-default-p2palbco-0fda6a8da8-562552387.ap-northeast-2.elb.amazonaws.com/p2p/apppub/?app=1089090'
         ),
         axios.get(
-          'http://k8s-default-p2palbco-0fda6a8da8-562552387.ap-northeast-2.elb.amazonaws.com/p2p/appgenre/?app=802870'
+          'http://k8s-default-p2palbco-0fda6a8da8-562552387.ap-northeast-2.elb.amazonaws.com/p2p/appgenre/?app=1089090'
         ),
         axios.get(
-          'http://k8s-default-p2palbco-0fda6a8da8-562552387.ap-northeast-2.elb.amazonaws.com/p2p/description/?app=802870'
+          'http://k8s-default-p2palbco-0fda6a8da8-562552387.ap-northeast-2.elb.amazonaws.com/p2p/description/?app=1089090'
         ),
         axios.get(
-          'http://k8s-default-p2palbco-0fda6a8da8-562552387.ap-northeast-2.elb.amazonaws.com/p2p/recommendation/?app=802870'
+          'http://k8s-default-p2palbco-0fda6a8da8-562552387.ap-northeast-2.elb.amazonaws.com/p2p/recommendation/?app=1089090'
         )
       ])
+
       .then(
         axios.spread((res1, res2, res3, res4, res5, res6) => {
           const data1 = res1.data;
@@ -86,23 +87,23 @@ const ItemDisplay = () => {
           </tr>
           <tr>
             <td>Genre</td>
-            {/* <td>{appgenData.results.genre.genre}</td> */}
+            {/* <td>{appgenData.results[0].genre}</td> */}
           </tr>
           <tr>
             <td>Developer</td>
-            {/* <td>{appdevData.results.developer.name}</td> */}
+            {/* <td>{appdevData.results[0].developer.name}</td> */}
           </tr>
           <tr>
             <td>Publisher</td>
-            {/* <td>{apppubData.results.publisher.name}</td> */}
+            {/* <td>{apppubData}</td> */}
           </tr>
           <tr>
             <td>Release Date</td>
             <td>{appData.release_date}</td>
           </tr>
           <tr>
-            <td>Recommendation</td>
-            {/* <td>{recoData.results.count}</td> */}
+            <td>Recommendations</td>
+            {/* <td>{recoData.results[0].count}</td> */}
           </tr>
         </table>
         <div className={styles.itemDisplayRightSection}>
@@ -110,7 +111,7 @@ const ItemDisplay = () => {
             className={styles.itemDisplayThumbnail}
             src={appData.header_url}
           />
-          {/* <p dangerouslySetInnerHTML={{__html: descrpData.results.short_descrption}}></p> */}
+          {/* <p dangerouslySetInnerHTML={{__html: descrpData.results[0].short_descrption}}></p> */}
         </div>
       </div>
     </section>

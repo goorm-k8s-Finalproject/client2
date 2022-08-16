@@ -23,8 +23,8 @@ const DlcDisplay = () => {
     },
     {
       appId: 43151238,
-      name: "TEST DLC 1",
-      releaseDate: "2010-03-14",
+      name: "TEST DLC 3",
+      releaseDate: "2012-08-14",
     },
   ];
   const [dlcData, setDlcData] = useState(dlcDummyData);

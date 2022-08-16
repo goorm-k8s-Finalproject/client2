@@ -57,10 +57,12 @@ const FilterSearch = (props) => {
             value={genre}
             onChange={(e) => setGenre(e.target.value)}
           >
+            <option value="Action">Action</option>
             <option value="FPS">FPS</option>
             <option value="RTS">RTS</option>
             <option value="RPG">RPG</option>
             <option value="Horror">Horror</option>
+            <option value="Single">Single</option>
           </select>
         </div>
         <div className={styles.filterSearchFilter}>
@@ -99,6 +101,7 @@ const FilterSearch = (props) => {
           >
             <option value="Game">Game</option>
             <option value="DLC">DLC</option>
+            <option value="SoundTrack">SoundTrack</option>
           </select>
         </div>
       </div>
