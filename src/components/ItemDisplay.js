@@ -18,22 +18,22 @@ const ItemDisplay = () => {
     axios
       .all([
         axios.get(
-          'http://10.100.59.1:8000/p2p/app/1089090'
+          process.env.REACT_APP_BACK_BASE_URL + '/app/1089090/'
         ),
         axios.get(
-          'http://10.100.59.1:8000/p2p/appdev/?app=1089090'
+          process.env.REACT_APP_BACK_BASE_URL + '/appdev/?app=1089090'
         ),
         axios.get(
-          'http://10.100.59.1:8000/p2p/apppub/?app=1089090'
+          process.env.REACT_APP_BACK_BASE_URL + '/apppub/?app=1089090'
         ),
         axios.get(
-          'http://10.100.59.1:8000/p2p/appgenre/?app=1089090'
+          process.env.REACT_APP_BACK_BASE_URL + '/appgenre/?app=1089090'
         ),
         axios.get(
-          'http://10.100.59.1:8000/p2p/description/?app=1089090'
+          process.env.REACT_APP_BACK_BASE_URL + '/description/?app=1089090'
         ),
         axios.get(
-          'http://10.100.59.1:8000/p2p/recommendation/?app=1089090'
+          process.env.REACT_APP_BACK_BASE_URL + '/recommendation/?app=1089090'
         )
       ])
 
@@ -47,15 +47,15 @@ const ItemDisplay = () => {
           const data6 = res6.data;
 
           setAppData(data1);
-          if (!data2.results || data2.results.length === 0) return;
+          if (!data2.results || data2.results.length == 0) return;
           setAppdevData(data2.results[0].developer.name);
-          if (!data3.results || data3.results.length === 0) return;
+          if (!data3.results || data3.results.length == 0) return;
           setApppubData(data3.results[0].publisher.name);
-          if (!data4.results || data4.results.length === 0) return;
+          if (!data4.results || data4.results.length == 0) return;
           setAppgenData(data4.results[0].genre.genre);
-          if (!data5.results || data5.results.length === 0) return;
+          if (!data5.results || data5.results.length == 0) return;
           setDescrpData(data5.results[0].short_description);
-          if (!data6.results || data6.results.length === 0) return;
+          if (!data6.results || data6.results.length == 0) return;
           setRecoData(data6.results[0].count);
         })
       )
